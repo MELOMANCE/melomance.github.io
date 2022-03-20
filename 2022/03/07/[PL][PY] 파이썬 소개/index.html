@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>파이썬 소개 | Melomance</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="파이썬" />
+    
+    <meta name="description" content="파이썬 언어파이썬(Python)은 1991년 네덜란드계 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(Dynamically Typed: 실행 시간에 자료형을 검사) 대화형 언어이다. 문법이 쉽고 간결하기 때문에 초보자들이 처음 프로그래밍을 배울 때 추천되는 언어이다. 파이썬의 유래파이">
+<meta name="keywords" content="파이썬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="파이썬 소개">
+<meta property="og:url" content="http://melomance.github.io/2022/03/07/[PL][PY] 파이썬 소개/index.html">
+<meta property="og:site_name" content="Melomance">
+<meta property="og:description" content="파이썬 언어파이썬(Python)은 1991년 네덜란드계 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(Dynamically Typed: 실행 시간에 자료형을 검사) 대화형 언어이다. 문법이 쉽고 간결하기 때문에 초보자들이 처음 프로그래밍을 배울 때 추천되는 언어이다. 파이썬의 유래파이">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://melomance.github.io/images/pyt/python_symbol.png">
+<meta property="og:updated_time" content="2022-03-20T07:12:52.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="파이썬 소개">
+<meta name="twitter:description" content="파이썬 언어파이썬(Python)은 1991년 네덜란드계 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(Dynamically Typed: 실행 시간에 자료형을 검사) 대화형 언어이다. 문법이 쉽고 간결하기 때문에 초보자들이 처음 프로그래밍을 배울 때 추천되는 언어이다. 파이썬의 유래파이">
+<meta name="twitter:image" content="http://melomance.github.io/images/pyt/python_symbol.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Melomance" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Ubuntu+Mono.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Blog Powered by Hexo</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/">Algorithms</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/SQL/">SQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/">Finance</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Accounting/">Accounting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Law/">Law</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Prg-Lang/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/S-W-Engr/">S/W Engr.</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/The-others/">The others</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/The-others/Hexo/">Hexo</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Prg-Lang/Python/">Python</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-[PL][PY] 파이썬 소개" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        파이썬 소개
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="article-date">
+            <time datetime="2022-03-06T15:00:00.000Z" itemprop="datePublished">2022-03-07</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/파이썬/">파이썬</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="파이썬-언어"><a href="#파이썬-언어" class="headerlink" title="파이썬 언어"></a><span style="color:#21955b">파이썬 언어</span></h2><p>파이썬(Python)은 1991년 네덜란드계 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어로, 플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(Dynamically Typed: 실행 시간에 자료형을 검사) 대화형 언어이다. 문법이 쉽고 간결하기 때문에 초보자들이 처음 프로그래밍을 배울 때 추천되는 언어이다.</p>
+<h3 id="파이썬의-유래"><a href="#파이썬의-유래" class="headerlink" title="파이썬의 유래"></a>파이썬의 유래</h3><p>파이썬의 사전적 의미는 고대신화에 나오는 커다란 뱀과는 무관하고 귀도가 좋아하는 코미디(Monty Python’s Flying Circus)에서 따온 것이다. 다만 파이썬의 로고에는 뱀 두마리가 형상화 되어 있다.</p>
+<h3 id="파이썬-인터프리터"><a href="#파이썬-인터프리터" class="headerlink" title="파이썬 인터프리터"></a>파이썬 인터프리터</h3><p>파이썬은 인터프리터 언어로 한 번에 하나의 명령어만 실행한다. 파이썬 표준 인터프리터는 명령행에서 <code>python</code>을 입력해서 실행한다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">(base) C:\Users\melomance&gt;python</span><br><span class="line">Python <span class="number">3.9</span><span class="number">.7</span> (default, Sep <span class="number">16</span> <span class="number">2021</span>, <span class="number">16</span>:<span class="number">59</span>:<span class="number">28</span>)</span><br><span class="line">...중략...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'Hello Python!'</span>)</span><br><span class="line">Hello Python!</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="파이썬-기본-철학"><a href="#파이썬-기본-철학" class="headerlink" title="파이썬 기본 철학"></a><span style="color:#21955b">파이썬 기본 철학</span></h2><p>파이썬의 핵심 철학(<code>The Zen of Python</code>)은 PEP 20 문서에 잘 정리되어 있으며 내용은 다음과 같다.</p>
+<ul>
+<li><h3 id="Beautiful-is-better-than-ugly"><a href="#Beautiful-is-better-than-ugly" class="headerlink" title="Beautiful is better than ugly."></a>Beautiful is better than ugly.</h3><p>아름다운 것이 추한 것보다 낫다.</p>
+</li>
+<li><h3 id="Explicit-is-better-than-implicit"><a href="#Explicit-is-better-than-implicit" class="headerlink" title="Explicit is better than implicit."></a>Explicit is better than implicit.</h3><p>명시적인 것이 암시적인 것보다 낫다.</p>
+</li>
+<li><h3 id="Simple-is-better-than-complex"><a href="#Simple-is-better-than-complex" class="headerlink" title="Simple is better than complex."></a>Simple is better than complex.</h3><p>간결한 것이 복합적인 것보다 낫다.</p>
+</li>
+<li><h3 id="Complex-is-better-than-complicated"><a href="#Complex-is-better-than-complicated" class="headerlink" title="Complex is better than complicated."></a>Complex is better than complicated.</h3><p>복합적인 것이 복잡한 것보다 낫다.</p>
+</li>
+<li><h4 id="Flat-is-better-than-nested"><a href="#Flat-is-better-than-nested" class="headerlink" title="Flat is better than nested."></a>Flat is better than nested.</h4><p>수평적인 것이 내포된 것보다 낫다.</p>
+</li>
+<li><h4 id="Sparse-is-better-than-dense"><a href="#Sparse-is-better-than-dense" class="headerlink" title="Sparse is better than dense."></a>Sparse is better than dense.</h4><p>여유로운 것이 밀집한 것보다 낫다.</p>
+</li>
+<li><h3 id="Readability-counts"><a href="#Readability-counts" class="headerlink" title="Readability counts."></a>Readability counts.</h3><p>가독성은 중요하다.</p>
+</li>
+<li><h4 id="Special-cases-aren’t-special-enough-to-break-the-rules"><a href="#Special-cases-aren’t-special-enough-to-break-the-rules" class="headerlink" title="Special cases aren’t special enough to break the rules."></a>Special cases aren’t special enough to break the rules.</h4><p>특별한 경우들은 규칙을 어길정도로 특별하지 않다.</p>
+</li>
+<li><h4 id="Although-practicality-beats-purity"><a href="#Although-practicality-beats-purity" class="headerlink" title="Although practicality beats purity."></a>Although practicality beats purity.</h4><p>허나 실용성은 순수성을 이긴다.</p>
+</li>
+<li><h4 id="Errors-should-never-pass-silently"><a href="#Errors-should-never-pass-silently" class="headerlink" title="Errors should never pass silently."></a>Errors should never pass silently.</h4><p>오류는 절대로 조용히 지나가지 않는다.</p>
+</li>
+<li><h4 id="Unless-explicitly-silenced"><a href="#Unless-explicitly-silenced" class="headerlink" title="Unless explicitly silenced."></a>Unless explicitly silenced.</h4><p>명시적으로 오류를 감추려는 의도가 아니라면.</p>
+</li>
+<li><h4 id="In-the-face-of-ambiguity-refuse-the-temptation-to-guess"><a href="#In-the-face-of-ambiguity-refuse-the-temptation-to-guess" class="headerlink" title="In the face of ambiguity, refuse the temptation to guess."></a>In the face of ambiguity, refuse the temptation to guess.</h4><p>모호함을 대할때, 이를 추측하려는 유혹을 거부하라.</p>
+</li>
+<li><h4 id="There-should-be-one–and-preferably-only-one–obvious-way-to-do-it"><a href="#There-should-be-one–and-preferably-only-one–obvious-way-to-do-it" class="headerlink" title="There should be one–and preferably only one–obvious way to do it."></a>There should be one–and preferably only one–obvious way to do it.</h4><p>명확한, 그리고 가급적이면 유일한 하나의 방법은 항상 존재한다.</p>
+</li>
+<li><h4 id="Although-that-way-may-not-be-obvious-at-first-unless-you’re-Dutch"><a href="#Although-that-way-may-not-be-obvious-at-first-unless-you’re-Dutch" class="headerlink" title="Although that way may not be obvious at first unless you’re Dutch."></a>Although that way may not be obvious at first unless you’re Dutch.</h4><p>비록 그 방법이 처음에는 명확해 보이지 않을지라도</p>
+</li>
+<li><h4 id="Now-is-better-than-never"><a href="#Now-is-better-than-never" class="headerlink" title="Now is better than never."></a>Now is better than never.</h4><p>지금 행동에 옮기는 것이 아예 안하는 것보다는 낫다.</p>
+</li>
+<li><h4 id="Although-never-is-often-better-than-right-now"><a href="#Although-never-is-often-better-than-right-now" class="headerlink" title="Although never is often better than right now."></a>Although never is often better than right now.</h4><p>비록 아예 안하는 것이 지금 당장 하는 것보다 나을때도 많지만.</p>
+</li>
+<li><h4 id="If-the-implementation-is-hard-to-explain-it’s-a-bad-idea"><a href="#If-the-implementation-is-hard-to-explain-it’s-a-bad-idea" class="headerlink" title="If the implementation is hard to explain, it’s a bad idea."></a>If the implementation is hard to explain, it’s a bad idea.</h4><p>구현 결과를 설명하기 쉽지 않다면, 그것은 나쁜 아이디어이다.</p>
+</li>
+<li><h4 id="If-the-implementation-is-easy-to-explain-it-may-be-a-good-idea"><a href="#If-the-implementation-is-easy-to-explain-it-may-be-a-good-idea" class="headerlink" title="If the implementation is easy to explain, it may be a good idea."></a>If the implementation is easy to explain, it may be a good idea.</h4><p>구현 결과를 설명하기 쉽다면, 그것은 좋은 아이디어일지도 모른다.</p>
+</li>
+<li><h4 id="Namespaces-are-one-honking-great-idea–let’s-do-more-of-those"><a href="#Namespaces-are-one-honking-great-idea–let’s-do-more-of-those" class="headerlink" title="Namespaces are one honking great idea–let’s do more of those!"></a>Namespaces are one honking great idea–let’s do more of those!</h4><p>네임스페이스를 사용하는 것은 완전 좋은 생각이다!</p>
+</li>
+</ul>
+<p><br></p>
+<h2 id="파이썬-설치"><a href="#파이썬-설치" class="headerlink" title="파이썬 설치"></a><span style="color:#21955b">파이썬 설치</span></h2><h3 id="아나콘다-Anaconda"><a href="#아나콘다-Anaconda" class="headerlink" title="아나콘다(Anaconda)"></a>아나콘다(Anaconda)</h3><p>파이썬 설치를 위한 통합 패키지로 패키지 관리 기능과 유명 데이터 과학 패키지가 포함되어 있다. 패키지 버전들은 conda를 통해 관리된다.</p>
+<blockquote>
+<p>설치링크: <a href="https://www.anaconda.com/products/individual?modal=commercial" target="_blank" rel="noopener">https://www.anaconda.com › products › individual › Individual Edition - Anaconda</a></p>
+</blockquote>
+<h3 id="패키지-설치-관련-명령어"><a href="#패키지-설치-관련-명령어" class="headerlink" title="패키지 설치 관련 명령어"></a>패키지 설치 관련 명령어</h3><ul>
+<li>기 설치된 패키지 목록을 확인한다.</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<ul>
+<li>신규 패키지를 설치한다.</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">pip install 패키지명</span><br><span class="line">pip install pymongo</span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://melomance.github.io/2022/03/07/[PL][PY] 파이썬 소개/" data-id="cl0zhmouc00cbacwosmre2gp8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2022/03/08/[PL][PY] 파이썬 기초/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            파이썬 기초
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/06/19/[DB][SQ] SQL 테이블 조인/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">표준SQL 테이블 조인</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/10/[PL][PY] 파이썬 자료형/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 자료형(스칼라형)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/10/[PL][PY] 파이썬 자료형/" class="title">파이썬 자료형(스칼라형)</a></p>
+                            <p class="item-date"><time datetime="2022-03-09T15:00:00.000Z" itemprop="datePublished">2022-03-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/08/[PL][PY] 파이썬 기초/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 기초" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/08/[PL][PY] 파이썬 기초/" class="title">파이썬 기초</a></p>
+                            <p class="item-date"><time datetime="2022-03-07T15:00:00.000Z" itemprop="datePublished">2022-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 소개" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="title">파이썬 소개</a></p>
+                            <p class="item-date"><time datetime="2022-03-06T15:00:00.000Z" itemprop="datePublished">2022-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/19/[DB][SQ] SQL 테이블 조인/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/rdb/sql_joins_guide_and_yntax.jpg)" alt="표준SQL 테이블 조인" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Database/SQL/">SQL</a></p>
+                            <p class="item-title"><a href="/2019/06/19/[DB][SQ] SQL 테이블 조인/" class="title">표준SQL 테이블 조인</a></p>
+                            <p class="item-date"><time datetime="2019-06-19T14:07:00.000Z" itemprop="datePublished">2019-06-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/09/[DB][SQ] SQL 데이터정의조작제어/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/rdb/sql2.png)" alt="SQL 데이터정의/조작/제어" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Database/SQL/">SQL</a></p>
+                            <p class="item-title"><a href="/2019/06/09/[DB][SQ] SQL 데이터정의조작제어/" class="title">SQL 데이터정의/조작/제어</a></p>
+                            <p class="item-date"><time datetime="2019-06-09T14:26:00.000Z" itemprop="datePublished">2019-06-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/">Algorithms</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/SQL/">SQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/">Finance</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Accounting/">Accounting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Law/">Law</a><span class="category-list-count">13</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/Python/">Python</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/S-W-Engr/">S/W Engr.</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/">The others</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">15</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0-1-배낭-문제/">0-1 배낭 문제</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네트워크/">네트워크</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터모델링/">데이터모델링</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/동적계획법/">동적계획법</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/민상법기초/">민상법기초</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백트래킹/">백트래킹</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분기한정법/">분기한정법</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할정복법/">분할정복법</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소프트웨어공학/">소프트웨어공학</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/외국환/">외국환</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로탐색/">최단경로탐색</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최소신장트리/">최소신장트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/탐욕알고리즘/">탐욕알고리즘</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회계기초/">회계기초</a><span class="tag-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/0-1-배낭-문제/" style="font-size: 12.22px;">0-1 배낭 문제</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/네트워크/" style="font-size: 10px;">네트워크</a> <a href="/tags/데이터모델링/" style="font-size: 11.11px;">데이터모델링</a> <a href="/tags/데이터베이스/" style="font-size: 16.67px;">데이터베이스</a> <a href="/tags/동적계획법/" style="font-size: 15.56px;">동적계획법</a> <a href="/tags/민상법기초/" style="font-size: 18.89px;">민상법기초</a> <a href="/tags/백트래킹/" style="font-size: 14.44px;">백트래킹</a> <a href="/tags/분기한정법/" style="font-size: 13.33px;">분기한정법</a> <a href="/tags/분할정복법/" style="font-size: 14.44px;">분할정복법</a> <a href="/tags/소프트웨어공학/" style="font-size: 16.67px;">소프트웨어공학</a> <a href="/tags/알고리즘/" style="font-size: 20px;">알고리즘</a> <a href="/tags/외국환/" style="font-size: 14.44px;">외국환</a> <a href="/tags/최단경로탐색/" style="font-size: 11.11px;">최단경로탐색</a> <a href="/tags/최소신장트리/" style="font-size: 12.22px;">최소신장트리</a> <a href="/tags/탐욕알고리즘/" style="font-size: 15.56px;">탐욕알고리즘</a> <a href="/tags/파이썬/" style="font-size: 12.22px;">파이썬</a> <a href="/tags/회계기초/" style="font-size: 17.78px;">회계기초</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/">GitHub</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Melomance</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://melomance.github.io/2022/03/07/[PL][PY] 파이썬 소개/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

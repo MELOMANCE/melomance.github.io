@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>파이썬 자료형(스칼라형) | Melomance</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="파이썬" />
+    
+    <meta name="description" content="스칼라형파이썬은 숫자 데이터와 문자열, 불리언 값, 그리고 날짜와 시간을 다룰 수 있는 몇몇 내장 자료형을 제공한다.    자료형 설명     None 파이썬의 null 값(None은 예약어가 아니라 NoneType의 유일한 인스턴스이다.)   str 문자열 자료형   unicode 유니코드 문자열 자료형   float 배정밀도(64비트) 부동소수점 실수.">
+<meta name="keywords" content="파이썬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="파이썬 자료형(스칼라형)">
+<meta property="og:url" content="http://melomance.github.io/2022/03/10/[PL][PY] 파이썬 자료형/index.html">
+<meta property="og:site_name" content="Melomance">
+<meta property="og:description" content="스칼라형파이썬은 숫자 데이터와 문자열, 불리언 값, 그리고 날짜와 시간을 다룰 수 있는 몇몇 내장 자료형을 제공한다.    자료형 설명     None 파이썬의 null 값(None은 예약어가 아니라 NoneType의 유일한 인스턴스이다.)   str 문자열 자료형   unicode 유니코드 문자열 자료형   float 배정밀도(64비트) 부동소수점 실수.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://melomance.github.io/images/pyt/python_symbol.png">
+<meta property="og:updated_time" content="2022-03-20T16:18:47.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="파이썬 자료형(스칼라형)">
+<meta name="twitter:description" content="스칼라형파이썬은 숫자 데이터와 문자열, 불리언 값, 그리고 날짜와 시간을 다룰 수 있는 몇몇 내장 자료형을 제공한다.    자료형 설명     None 파이썬의 null 값(None은 예약어가 아니라 NoneType의 유일한 인스턴스이다.)   str 문자열 자료형   unicode 유니코드 문자열 자료형   float 배정밀도(64비트) 부동소수점 실수.">
+<meta name="twitter:image" content="http://melomance.github.io/images/pyt/python_symbol.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Melomance" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Ubuntu+Mono.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Blog Powered by Hexo</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/">Algorithms</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/">Database</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Database/SQL/">SQL</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/">Finance</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Accounting/">Accounting</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Finance/Law/">Law</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Prg-Lang/Python/">Python</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/S-W-Engr/">S/W Engr.</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/The-others/">The others</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/The-others/Hexo/">Hexo</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Prg-Lang/Python/">Python</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-[PL][PY] 파이썬 자료형" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        파이썬 자료형(스칼라형)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2022/03/10/[PL][PY] 파이썬 자료형/" class="article-date">
+            <time datetime="2022-03-09T15:00:00.000Z" itemprop="datePublished">2022-03-10</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/파이썬/">파이썬</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="스칼라형"><a href="#스칼라형" class="headerlink" title="스칼라형"></a><span style="color:#21955b">스칼라형</span></h2><p>파이썬은 숫자 데이터와 문자열, 불리언 값, 그리고 날짜와 시간을 다룰 수 있는 몇몇 내장 자료형을 제공한다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">자료형</th>
+<th style="text-align:left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">None</td>
+<td style="text-align:left">파이썬의 null 값(None은 예약어가 아니라 NoneType의 유일한 인스턴스이다.)</td>
+</tr>
+<tr>
+<td style="text-align:left">str</td>
+<td style="text-align:left">문자열 자료형</td>
+</tr>
+<tr>
+<td style="text-align:left">unicode</td>
+<td style="text-align:left">유니코드 문자열 자료형</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">배정밀도(64비트) 부동소수점 실수. double형이 따로 존재하지 않는다.</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">부호가 있는(음수 표현이 가능한) 정수. 값의 범위는 플랫폼에 의존적이다.</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">무한 정밀도의 부호가 있는 정수. int 값이 일정 값 이상이 되면 자동적으로 long형으로 변환된다.</td>
+</tr>
+<tr>
+<td style="text-align:left">bool</td>
+<td style="text-align:left">참(True)과 거짓(False)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="None"><a href="#None" class="headerlink" title="None"></a>None</h3><p>None은 파이썬에서 사용하는 널(null) 값이다. 만약 어떤 함수에서 명시적으로 값을 반환하지 않으면 묵시적으로 None을 반환한다. None은 예약어가 아니라 NoneType의 유일한 인스턴스이다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a = <span class="keyword">None</span></span><br><span class="line">a <span class="keyword">is</span> <span class="keyword">None</span> <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+<h3 id="문자열-str"><a href="#문자열-str" class="headerlink" title="문자열(str)"></a>문자열(str)</h3><p>파이썬의 문자열은 작은따옴표나 큰따옴표로 둘러싸서 표현할 수 있다. 개행문자가 포함된 여러 줄에 걸친 문자열은 3개의 작은따옴표나 큰따옴표로 둘러싼다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">lyric1 = <span class="string">'My angel in the night, you are my love...'</span></span><br><span class="line">lyric2 = <span class="string">"The love of my life."</span></span><br><span class="line">lyric3 = <span class="string">"""</span></span><br><span class="line"><span class="string">Sometimes it's so hard to believe,</span></span><br><span class="line"><span class="string">When a love can be so strong,</span></span><br><span class="line"><span class="string">And faith gives me the strength,</span></span><br><span class="line"><span class="string">and kept me going on.</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<p>str 함수를 사용해서 문자열로 변환할 수 있다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a = <span class="number">5.6</span></span><br><span class="line">str(a) <span class="comment"># '5.6'</span></span><br></pre></td></tr></table></figure></p>
+<p>역슬래시는 이스케이프 문자로, 개행문자나 유니코드 글자 같은 특수목적의 글자를 나타내기 위해 사용한다. 문자열 앞에 r을 써서 문자열을 그 자체로만 해석하도록 할 수도 있다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">s = <span class="string">'12\\34'</span> <span class="comment"># 12\34</span></span><br><span class="line">s = <span class="string">r'this\has\no\special\characters'</span></span><br><span class="line">s <span class="comment"># 'this\\has\\no\\special\\characters'</span></span><br><span class="line">print(s) <span class="comment"># this\has\no\special\characters</span></span><br></pre></td></tr></table></figure></p>
+<p>두 문자열을 더하면(+) 두 문자열을 이어붙인 새로운 문자열을 생성하며, 특정 문자열을 반복 출력하기 위해 곱연산(*)도 사용할 수 있다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">lyric1 = <span class="string">'Would you reach out for tomorrow, '</span></span><br><span class="line">lyric2 = <span class="string">"or try to turn back time?"</span></span><br><span class="line">lyric1 + lyric2 <span class="comment"># Would you reach out for tomorrow, or try to turn back time?</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(int(input())):</span><br><span class="line">    print(<span class="string">'*'</span> * (i+<span class="number">1</span>))</span><br></pre></td></tr></table></figure></p>
+<p>문자열 내 다른 문자열을 삽입하기 위한 코드는 다음과 같다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">my_string = <span class="string">'Hello, what are doing?'</span></span><br><span class="line">index = my_string.find(<span class="string">'doing'</span>)</span><br><span class="line">final_string = my_string[:index] + <span class="string">'you '</span> + my_string[index:]</span><br><span class="line">print(final_string)</span><br><span class="line"></span><br><span class="line">my_string = <span class="string">'Hello, what are doing?'</span></span><br><span class="line">split_strings = my_string.split()</span><br><span class="line">split_strings.insert(<span class="number">3</span>, <span class="string">'you'</span>)</span><br><span class="line">final_string = <span class="string">' '</span>.join(split_strings)</span><br><span class="line">print(final_string)</span><br></pre></td></tr></table></figure></p>
+<h3 id="숫자-자료형-int-long-float"><a href="#숫자-자료형-int-long-float" class="headerlink" title="숫자 자료형(int, long, float)"></a>숫자 자료형(int, long, float)</h3><p>숫자를 위한 파이썬의 주요 자료형은 int와 float이다. int 자료형의 크기는 플랫폼이 32비트 인지 64비트인지에 따 다르지만, 파이썬은 아주 큰 정수를 무한히 큰 정수를 저장할 수 있는 long자료형으로 변환해준다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">ival = <span class="number">17239871</span></span><br><span class="line">ival**<span class="number">6</span> <span class="comment"># 26254519291092456596965462913230729701102721</span></span><br></pre></td></tr></table></figure>
+<p>부동소수점 숫자는 float 자료형으로 나타낸다. 내부적으로는 배정밀도(64비트)를 가지는 값이다. float형은 과학표기법으로 나타낼 수도 있다.</p>
+<ul>
+<li><code>부동소수점(浮動小數點, floating point)</code> 방식은 실수를 컴퓨터상에서 근사하여 표현할 때 소수점의 위치를 고정하지 않고 그 위치를 나타내는 수를 따로 적는 것으로, 유효숫자를 나타내는 가수(假數)와 소수점의 위치를 풀이하는 지수(指數)로 나누어 표현한다.</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">fval = <span class="number">7.123</span></span><br><span class="line">fval2 = <span class="number">6.78e-05</span> <span class="comment"># 6.78 * 10**-5</span></span><br></pre></td></tr></table></figure>
+<p>파이썬3 버전에서는 정수 나눗셈은 정수를 반환하지 않고 부동소수점 숫자를 반환한다. 나눗셈의 결과가 정수가 아닐 경우 몫만을 돌려주는 C언어 형식의 정수 나눗셈은 // 연산자를 사용해 계산한다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span> / <span class="number">2</span> <span class="comment"># 1.5</span></span><br><span class="line"><span class="number">3</span> // <span class="number">2</span> <span class="comment"># 1</span></span><br></pre></td></tr></table></figure>
+<p>복소수의 허수 부분은 j로 나타낸다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">cval = <span class="number">1</span> + <span class="number">2j</span></span><br><span class="line">cval * (<span class="number">1</span> - <span class="number">2j</span>) <span class="comment"># (5+0j)</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="불리언-bool"><a href="#불리언-bool" class="headerlink" title="불리언(bool)"></a>불리언(bool)</h3><p>파이썬에서 불리언 값은 True와 False이다. 비교 및 기타 조건식은 True 아니면 False로 해석된다. 불리언 값은 and와 or 예약어로 조합할 수 있다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">True</span> <span class="keyword">and</span> <span class="keyword">True</span> <span class="comment"># True</span></span><br><span class="line"><span class="keyword">False</span> <span class="keyword">or</span> <span class="keyword">True</span> <span class="comment"># True</span></span><br><span class="line">bool([]), bool([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) <span class="comment"># (False, True)</span></span><br><span class="line">bool(<span class="string">'Hello world!'</span>), bool(<span class="string">''</span>) <span class="comment"># (True, False)</span></span><br><span class="line">bool(<span class="number">0</span>), bool(<span class="number">1</span>) <span class="comment"># (False, True)</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="날짜와-시간-자료형"><a href="#날짜와-시간-자료형" class="headerlink" title="날짜와 시간 자료형"></a><span style="color:#21955b">날짜와 시간 자료형</span></h2><p>파이썬 내장 datetime 모듈은 datetime, date, 그리고 time 형을 지원한다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, date, time</span><br><span class="line"></span><br><span class="line">d = datetime(<span class="number">2022</span>, <span class="number">1</span>, <span class="number">24</span>, <span class="number">4</span>, <span class="number">57</span>, <span class="number">1</span>) <span class="comment"># 2022년 1월 24일 4시 57분 01초</span></span><br><span class="line">print(d.day, d.minute) <span class="comment"># 24 57</span></span><br><span class="line">print(d.date(), d.time(), type(d)) <span class="comment"># 2022-01-24 04:57:01 &lt;class 'datetime.datetime'&gt;</span></span><br></pre></td></tr></table></figure>
+<p>datetime의 필드를 치환하는 것도 가능하다. 다음 아래의 코드는 분과 초 필드를 0으로 치환해서 새로운 객체를 생성한다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">d.replace(minute=<span class="number">0</span>, second=<span class="number">0</span>) <span class="comment"># datetime.datetime(2022, 1, 24, 4, 0)</span></span><br></pre></td></tr></table></figure>
+<p>두 datetime 객체의 차는 datetime.timedelta 객체를 반환하며, timedelta 객체를 datetime 객체에 더하면 그 만큼 시간이 지연된 datetime 객체를 얻을 수 있다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">d1 = datetime(<span class="number">2022</span>, <span class="number">1</span>, <span class="number">24</span>, <span class="number">4</span>, <span class="number">57</span>, <span class="number">0</span>)</span><br><span class="line">d2 = datetime(<span class="number">2019</span>, <span class="number">4</span>, <span class="number">16</span>, <span class="number">11</span>, <span class="number">18</span>, <span class="number">0</span>)</span><br><span class="line">delta = d1 - d2</span><br><span class="line">delta <span class="comment"># datetime.timedelta(days=1013, seconds=63540)</span></span><br><span class="line">str(delta).split(<span class="string">','</span>)[<span class="number">0</span>].split(<span class="string">' '</span>)[<span class="number">0</span>] <span class="comment"># '1013'</span></span><br><span class="line">d2 + delta <span class="comment"># datetime.datetime(2022, 1, 24, 4, 57)</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="형-변환"><a href="#형-변환" class="headerlink" title="형 변환"></a><span style="color:#21955b">형 변환</span></h2><p>str, bool, int, float 자료형은 형 변환을 위한 함수로 사용된다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">s = <span class="string">'3.14159'</span></span><br><span class="line">fval = float(s)</span><br><span class="line">print(type(fval), fval) <span class="comment"># &lt;class 'float'&gt; 3.14159</span></span><br><span class="line">int(fval) <span class="comment"># 3</span></span><br><span class="line">bool(fval) <span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">d = datetime(<span class="number">2022</span>, <span class="number">1</span>, <span class="number">24</span>, <span class="number">4</span>, <span class="number">57</span>, <span class="number">0</span>)</span><br><span class="line">str(d) <span class="comment"># '2022-01-24 04:57:00'</span></span><br><span class="line">str(d).split(<span class="string">' '</span>) <span class="comment"># ['2022-01-24', '04:57:00']</span></span><br><span class="line">str(d).split(<span class="string">' '</span>)[<span class="number">0</span>] <span class="comment"># '2022-01-24'</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://melomance.github.io/2022/03/10/[PL][PY] 파이썬 자료형/" data-id="cl0zhmoui00ckacwori4e0tzc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2022/03/08/[PL][PY] 파이썬 기초/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">파이썬 기초</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/10/[PL][PY] 파이썬 자료형/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 자료형(스칼라형)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/10/[PL][PY] 파이썬 자료형/" class="title">파이썬 자료형(스칼라형)</a></p>
+                            <p class="item-date"><time datetime="2022-03-09T15:00:00.000Z" itemprop="datePublished">2022-03-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/08/[PL][PY] 파이썬 기초/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 기초" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/08/[PL][PY] 파이썬 기초/" class="title">파이썬 기초</a></p>
+                            <p class="item-date"><time datetime="2022-03-07T15:00:00.000Z" itemprop="datePublished">2022-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 소개" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="title">파이썬 소개</a></p>
+                            <p class="item-date"><time datetime="2022-03-06T15:00:00.000Z" itemprop="datePublished">2022-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/19/[DB][SQ] SQL 테이블 조인/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/rdb/sql_joins_guide_and_yntax.jpg)" alt="표준SQL 테이블 조인" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Database/SQL/">SQL</a></p>
+                            <p class="item-title"><a href="/2019/06/19/[DB][SQ] SQL 테이블 조인/" class="title">표준SQL 테이블 조인</a></p>
+                            <p class="item-date"><time datetime="2019-06-19T14:07:00.000Z" itemprop="datePublished">2019-06-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/06/09/[DB][SQ] SQL 데이터정의조작제어/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/rdb/sql2.png)" alt="SQL 데이터정의/조작/제어" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Database/">Database</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Database/SQL/">SQL</a></p>
+                            <p class="item-title"><a href="/2019/06/09/[DB][SQ] SQL 데이터정의조작제어/" class="title">SQL 데이터정의/조작/제어</a></p>
+                            <p class="item-date"><time datetime="2019-06-09T14:26:00.000Z" itemprop="datePublished">2019-06-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/">Algorithms</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/SQL/">SQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/">Finance</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Accounting/">Accounting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Law/">Law</a><span class="category-list-count">13</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/Python/">Python</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/S-W-Engr/">S/W Engr.</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/">The others</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">15</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0-1-배낭-문제/">0-1 배낭 문제</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네트워크/">네트워크</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터모델링/">데이터모델링</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/동적계획법/">동적계획법</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/민상법기초/">민상법기초</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백트래킹/">백트래킹</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분기한정법/">분기한정법</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할정복법/">분할정복법</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소프트웨어공학/">소프트웨어공학</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/외국환/">외국환</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로탐색/">최단경로탐색</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최소신장트리/">최소신장트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/탐욕알고리즘/">탐욕알고리즘</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회계기초/">회계기초</a><span class="tag-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/0-1-배낭-문제/" style="font-size: 12.22px;">0-1 배낭 문제</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/네트워크/" style="font-size: 10px;">네트워크</a> <a href="/tags/데이터모델링/" style="font-size: 11.11px;">데이터모델링</a> <a href="/tags/데이터베이스/" style="font-size: 16.67px;">데이터베이스</a> <a href="/tags/동적계획법/" style="font-size: 15.56px;">동적계획법</a> <a href="/tags/민상법기초/" style="font-size: 18.89px;">민상법기초</a> <a href="/tags/백트래킹/" style="font-size: 14.44px;">백트래킹</a> <a href="/tags/분기한정법/" style="font-size: 13.33px;">분기한정법</a> <a href="/tags/분할정복법/" style="font-size: 14.44px;">분할정복법</a> <a href="/tags/소프트웨어공학/" style="font-size: 16.67px;">소프트웨어공학</a> <a href="/tags/알고리즘/" style="font-size: 20px;">알고리즘</a> <a href="/tags/외국환/" style="font-size: 14.44px;">외국환</a> <a href="/tags/최단경로탐색/" style="font-size: 11.11px;">최단경로탐색</a> <a href="/tags/최소신장트리/" style="font-size: 12.22px;">최소신장트리</a> <a href="/tags/탐욕알고리즘/" style="font-size: 15.56px;">탐욕알고리즘</a> <a href="/tags/파이썬/" style="font-size: 12.22px;">파이썬</a> <a href="/tags/회계기초/" style="font-size: 17.78px;">회계기초</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://github.com/">GitHub</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2022 Melomance</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://melomance.github.io/2022/03/10/[PL][PY] 파이썬 자료형/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
