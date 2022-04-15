@@ -18,7 +18,7 @@
 <meta property="og:description" content="파이썬 권장 스타일파이썬을 코딩할 때에는 가독성을 위해 PEP 8에서 명시하는 권장 스타일을 따르는 것이 좋다.  한 줄은 79글자로 제한하기 import는 파일의 맨 위에 적고 내장 모듈, 제3자 모듈, 직접 만든 모듈 순서로 불러들이기 인스턴스 메소드의 첫 인자는 self로 쓰고, 클래스 메소드의 첫 인자는 cls로 쓰기 할당 연산자(=)의 앞뒤로 공백">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://melomance.github.io/images/pyt/python_symbol.png">
-<meta property="og:updated_time" content="2022-03-20T16:15:11.732Z">
+<meta property="og:updated_time" content="2022-04-15T13:29:35.150Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="파이썬 기초">
 <meta name="twitter:description" content="파이썬 권장 스타일파이썬을 코딩할 때에는 가독성을 위해 PEP 8에서 명시하는 권장 스타일을 따르는 것이 좋다.  한 줄은 79글자로 제한하기 import는 파일의 맨 위에 적고 내장 모듈, 제3자 모듈, 직접 만든 모듈 순서로 불러들이기 인스턴스 메소드의 첫 인자는 self로 쓰고, 클래스 메소드의 첫 인자는 cls로 쓰기 할당 연산자(=)의 앞뒤로 공백">
@@ -209,9 +209,99 @@
 <h3 id="가변-객체-Mutable-Object-및-불변-객체-Immutable-Object"><a href="#가변-객체-Mutable-Object-및-불변-객체-Immutable-Object" class="headerlink" title="가변 객체(Mutable Object) 및 불변 객체(Immutable Object)"></a>가변 객체(Mutable Object) 및 불변 객체(Immutable Object)</h3><p>파이썬에서 리스트, 딕셔너리 또는 사용자 정의 클래스 같은 대부분의 객체는 변경이 가능하다. 즉, 객체나 값의 내용을 바꿀 수 있는 가변 객체이다. 값을 수정할 때는 바뀐 값이 저장된 새로운 객체를 생성하고 참조 대상을 새 객체로 옮기는 방식으로 동작한다. 이와 같은 특징 때문에 파이썬은 순수 객체지향 언어라고 할 수 있다. 반면 문자열이나 튜플은 값을 변경할 수 없는 불변 객체이다.</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a_list = [<span class="string">'foo'</span>, <span class="number">2</span>, [<span class="number">4</span>, <span class="number">5</span>]]</span><br><span class="line">a_list[<span class="number">2</span>] = (<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">print(a_list) <span class="comment"># ['foo', 2, (3, 4)]</span></span><br><span class="line"></span><br><span class="line">a_tuple = (<span class="number">3</span>, <span class="number">5</span>, (<span class="number">4</span>, <span class="number">5</span>))</span><br><span class="line">a_tuple[<span class="number">1</span>] = <span class="string">'four'</span> <span class="comment"># TypeError: 'tuple' object does not support item assignment</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h2 id="파이썬-입출력"><a href="#파이썬-입출력" class="headerlink" title="파이썬 입출력"></a><span style="color:#21955b">파이썬 입출력</span></h2><h3 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h3><p>print() 함수를 사용한다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">name = <span class="string">"손흥민"</span></span><br><span class="line">backnum = <span class="number">7</span></span><br><span class="line">print(<span class="string">"이름: %s 등번호: %d"</span> % (name, backnum)) <span class="comment"># 이름: 손흥민 등번호: 7</span></span><br><span class="line">print(<span class="string">"이름: &#123;&#125; 나이: &#123;&#125;"</span>.format(name, backnum))</span><br></pre></td></tr></table></figure></p>
-<h3 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h3><p>input() 함수를 사용하며, 입력값이 한 개인 경우는 다음과 같다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">n = int(input()) <span class="comment"># 정수값 변환을 위한 캐스팅</span></span><br><span class="line">str = input()</span><br></pre></td></tr></table></figure></p>
-<p>공백문자를 구분자로 하여 한 줄에 입력값을 두 개 이상 입력받는 경우에는 map() 함수를 이용한다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a, b, c = map(int, input().split())</span><br></pre></td></tr></table></figure></p>
+<h2 id="파이썬-이항연산자"><a href="#파이썬-이항연산자" class="headerlink" title=" 파이썬 이항연산자"></a><span style="color:#21955b"> 파이썬 이항연산자</span></h2><p>이항연산자와 산술연산자는 타 프로그래밍 언어와 거의 동일하다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Operation</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">a + b</td>
+<td style="text-align:left">a와 b를 더한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a - b</td>
+<td style="text-align:left">a에서 b를 뺀다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a ∗ b</td>
+<td style="text-align:left">a에 b를 곱한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a / b</td>
+<td style="text-align:left">a를 b로 나눈다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a // b</td>
+<td style="text-align:left">a를 b로 나눈 몫을 취한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a % b</td>
+<td style="text-align:left">a를 b로 나눈 나머지를 취한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a ∗∗ b</td>
+<td style="text-align:left">a의 b승을 구한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a &amp; b</td>
+<td style="text-align:left">a와 b가 모두 True일 경우 True를 반환한다. 정수일 경우 비트 단위 AND를 구한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a ∣ b</td>
+<td style="text-align:left">a 혹은 b가 True일 경우 True를 반환한다. 정수일 경우 비트 단위 OR을 구한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a ^ b</td>
+<td style="text-align:left">a 혹은 b 중 하나만 True일 경우 True를 반환한다. 정수일 경우 비트 단위 EXCLUSIVE-OR을 구한다.</td>
+</tr>
+<tr>
+<td style="text-align:left">a == b</td>
+<td style="text-align:left">a와 b가 같은 경우 True</td>
+</tr>
+<tr>
+<td style="text-align:left">a != b</td>
+<td style="text-align:left">a와 b가 다를 경우 True</td>
+</tr>
+<tr>
+<td style="text-align:left">a&lt;=b, a&lt;b</td>
+<td style="text-align:left">각각 a가 b이하일 경우, a가 b 미만일 경우 True</td>
+</tr>
+<tr>
+<td style="text-align:left">a&gt;b, a&gt;=b</td>
+<td style="text-align:left">각각 a가 b 초과일 경우, a가 b 이상일 경우 True</td>
+</tr>
+<tr>
+<td style="text-align:left">a is b</td>
+<td style="text-align:left">a와 b가 같은 파이썬 객체를 참조할 경우 True</td>
+</tr>
+<tr>
+<td style="text-align:left">a is not b</td>
+<td style="text-align:left">a와 b가 다른 파이썬 객체를 참조할 경우 True</td>
+</tr>
+</tbody>
+</table>
+<p>두 참조 변수가 같은 객체를 가리키고 있는지 검사하려면 <code>is</code> 예약어를 사용하며, 이는 == 연산자와 다르다는 것을 기억하자. <code>is not</code>을 사용하면 두 객체가 같지 않은지 검사할 수 있다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = a</span><br><span class="line">c = list(a) <span class="comment"># 새 리스트 생성</span></span><br><span class="line"></span><br><span class="line">print(a <span class="keyword">is</span> b) <span class="comment"># True</span></span><br><span class="line">print(a <span class="keyword">is</span> <span class="keyword">not</span> c) <span class="comment"># True</span></span><br><span class="line">print(a == c) <span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h2 id="파이썬-입출력"><a href="#파이썬-입출력" class="headerlink" title="파이썬 입출력"></a><span style="color:#21955b">파이썬 입출력</span></h2><h3 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h3><p><code>print()</code> 함수를 사용한다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">name = <span class="string">"손흥민"</span></span><br><span class="line">backnum = <span class="number">7</span></span><br><span class="line">print(<span class="string">"이름: %s 등번호: %d"</span> % (name, backnum)) <span class="comment"># 이름: 손흥민 등번호: 7</span></span><br><span class="line">print(<span class="string">"이름: &#123;&#125; 나이: &#123;&#125;"</span>.format(name, backnum))</span><br></pre></td></tr></table></figure></p>
+<h3 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h3><p><code>input()</code> 함수를 사용하며, 입력값이 한 개인 경우는 다음과 같다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">n = int(input()) <span class="comment"># 정수값 변환을 위한 캐스팅</span></span><br><span class="line">str = input()</span><br></pre></td></tr></table></figure></p>
+<p>공백문자를 구분자로 하여 한 줄에 입력값을 두 개 이상 입력받는 경우에는 <code>map()</code> 함수를 이용한다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a, b, c = map(int, input().split())</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h2 id="파이썬-흐름제어"><a href="#파이썬-흐름제어" class="headerlink" title="파이썬 흐름제어"></a><span style="color:#21955b">파이썬 흐름제어</span></h2><h3 id="if-elif-else"><a href="#if-elif-else" class="headerlink" title="if, elif, else"></a>if, elif, else</h3><p><code>if</code> 문은 조건을 검사하여 그 조건이 True일 경우 if 블록 내의 코드를 수행한다. if문은 부가적으로 하나 이상의 <code>elif</code> 블록과 다른 모든 조건이 False인 경우 수행될 <code>else</code> 블록을 가질 수 있다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line"><span class="keyword">if</span> x &lt; <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">'It is Negative'</span>)</span><br><span class="line"><span class="keyword">elif</span> x == <span class="number">0</span>:</span><br><span class="line">    print(<span class="string">'Equal to Zero'</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="number">0</span> &lt; x &lt; <span class="number">5</span>:</span><br><span class="line">    print(<span class="string">'Positive but smaller than 5'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'Positive and Larger than or equal to 5'</span>)</span><br></pre></td></tr></table></figure>
+<p>파이썬에서는 if-else 블록을 한 줄로 표현할 수 있다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">5</span></span><br><span class="line">print(<span class="string">'Positive'</span> <span class="keyword">if</span> x &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="string">'Negative'</span>) <span class="comment"># Positive</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="for-반복문"><a href="#for-반복문" class="headerlink" title="for 반복문"></a>for 반복문</h3><p><code>for</code> 반복문은 리스트나 튜플 같은 컬렉션이나 이터레이터를 순회한다. for 문은 <code>continue</code> 예약어를 사용해서 남은 블록을 건너뛰고 다음 순회로 넘어갈 수도 있고, <code>break</code> 예약어를 사용해서 빠져나갈 수도 있다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">sequence = [<span class="number">1</span>, <span class="number">2</span>, <span class="keyword">None</span>, <span class="number">4</span>, <span class="keyword">None</span>, <span class="number">5</span>]</span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> sequence:</span><br><span class="line">    <span class="keyword">if</span> value <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    total += value</span><br><span class="line"></span><br><span class="line">print(total) <span class="comment"># 12</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">string = <span class="string">'Python'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(string)):</span><br><span class="line">    print(string[i], end=<span class="string">''</span>) <span class="comment"># Python</span></span><br></pre></td></tr></table></figure>
+<h3 id="while-반복문"><a href="#while-반복문" class="headerlink" title="while 반복문"></a>while 반복문</h3><p><code>while</code> 반복문은 조건을 명시하고 해당 조건이 False가 되거나 break문을 사용해서 명시적으로 반복을 끝낼 때까지 블록 안의 코드를 수행한다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">256</span></span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> x &gt; <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">if</span> total &gt; <span class="number">500</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    total += x</span><br><span class="line">    x = x // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">print(total) <span class="comment"># 504</span></span><br></pre></td></tr></table></figure>
+<h3 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h3><p><code>pass</code> 문은 블록 안에서 어떤 작업도 실행하지 않을때 사용된다.<br><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> x &lt; <span class="number">0</span> :</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="예외처리"><a href="#예외처리" class="headerlink" title="예외처리"></a>예외처리</h3><p>견고한 프로그램을 작성하려면 파이썬의 오류나 예외를 잘 처리해야 한다. 이를 위해 <code>try/except</code> 블록을 사용하면 된다. 예외를 무시하지 않고, 해당 블록의 코드가 성공적으로 수행되었는지의 여부와 관계없이 실행시키고 싶은 코드는 <code>finally</code> 블록을 사용해서 적는다.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">attempt_float</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> float(x)</span><br><span class="line">    <span class="keyword">except</span> (TypeError, ValueError): <span class="comment"># 튜플을 사용하여 여러 예외를 한 번에 처리 가능</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">f = open(path, <span class="string">'w'</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    write_to_file(f)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h2 id="인덱스-슬라이싱"><a href="#인덱스-슬라이싱" class="headerlink" title="인덱스 슬라이싱"></a><span style="color:#21955b">인덱스 슬라이싱</span></h2><p>리스트와 같은 자료형(배열, 튜플 등)은 색인 연산자 [] 안에 <code>[시작위치(start):끝위치(stop):간격(step)]</code>을 지정하여 사용할 수 있다. 색인의 시작 위치에 있는 값은 포함되지만 끝 위치에 있는 값은 포함되지 않는다. 따라서 슬라이싱 결과 개수는 stop - start이다. 간격 값으로 -1을 사용하면 리스트나 튜플을 역순으로 반환한다.</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">str = <span class="string">"123456"</span></span><br><span class="line">print(str[<span class="number">1</span>::<span class="number">2</span>]) <span class="comment"># 246</span></span><br><span class="line">print(str[::<span class="number">-1</span>]) <span class="comment"># 654321</span></span><br></pre></td></tr></table></figure>
@@ -222,7 +312,7 @@
 
 
 
-    <a data-url="http://melomance.github.io/2022/03/08/[PL][PY] 파이썬 기초/" data-id="cl0zikrl9007ql4wohodp9vic" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://melomance.github.io/2022/03/08/[PL][PY] 파이썬 기초/" data-id="cl1w8mnvd008f7wwob9h7dcae" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -394,6 +484,26 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2022/03/25/[PL][PY] 파이썬 함수/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 함수" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2022/03/25/[PL][PY] 파이썬 함수/" class="title">파이썬 함수</a></p>
+                            <p class="item-date"><time datetime="2022-03-24T15:00:00.000Z" itemprop="datePublished">2022-03-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2022/03/22/[PL][PY] 파이썬 자료구조(세트, 내장자료형)/" class="thumbnail">
     
     
@@ -471,26 +581,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/pyt/python_symbol.png)" alt="파이썬 소개" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Prg-Lang/">Prg. Lang.</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Prg-Lang/Python/">Python</a></p>
-                            <p class="item-title"><a href="/2022/03/07/[PL][PY] 파이썬 소개/" class="title">파이썬 소개</a></p>
-                            <p class="item-date"><time datetime="2022-03-06T15:00:00.000Z" itemprop="datePublished">2022-03-07</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -500,7 +590,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/">Algorithms</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/SQL/">SQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/">Finance</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Accounting/">Accounting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Law/">Law</a><span class="category-list-count">13</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/Python/">Python</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/S-W-Engr/">S/W Engr.</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/">The others</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/">Algorithms</a><span class="category-list-count">29</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Backtracking/">Backtracking</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Branch-and-Bound/">Branch and Bound</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Divide-and-Conquer/">Divide and Conquer</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Dynamic-Prgrming/">Dynamic Prgrming</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithms/Greedy-Approach/">Greedy Approach</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Basic-Concepts/">Basic Concepts</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/Data-Modeling/">Data Modeling</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/SQL/">SQL</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/">Finance</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Accounting/">Accounting</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Foreign-Exchange/">Foreign Exchange</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Finance/Law/">Law</a><span class="category-list-count">13</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Network/">Network</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/">Prg. Lang.</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Prg-Lang/Python/">Python</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/S-W-Engr/">S/W Engr.</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/">The others</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/The-others/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -510,7 +600,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">15</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/10/">October 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/08/">August 2011</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/07/">July 2011</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a><span class="archive-list-count">15</span></li></ul>
         </div>
     </div>
 
@@ -520,7 +610,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0-1-배낭-문제/">0-1 배낭 문제</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네트워크/">네트워크</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터모델링/">데이터모델링</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/동적계획법/">동적계획법</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/민상법기초/">민상법기초</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백트래킹/">백트래킹</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분기한정법/">분기한정법</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할정복법/">분할정복법</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소프트웨어공학/">소프트웨어공학</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/외국환/">외국환</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/자료구조/">자료구조</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로탐색/">최단경로탐색</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최소신장트리/">최소신장트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/탐욕알고리즘/">탐욕알고리즘</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회계기초/">회계기초</a><span class="tag-list-count">9</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/0-1-배낭-문제/">0-1 배낭 문제</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/네트워크/">네트워크</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터모델링/">데이터모델링</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/동적계획법/">동적계획법</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/민상법기초/">민상법기초</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/백트래킹/">백트래킹</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분기한정법/">분기한정법</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/분할정복법/">분할정복법</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소프트웨어공학/">소프트웨어공학</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/알고리즘/">알고리즘</a><span class="tag-list-count">29</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/외국환/">외국환</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/자료구조/">자료구조</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최단경로탐색/">최단경로탐색</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/최소신장트리/">최소신장트리</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/탐욕알고리즘/">탐욕알고리즘</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/파이썬/">파이썬</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/회계기초/">회계기초</a><span class="tag-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -530,7 +620,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/0-1-배낭-문제/" style="font-size: 12.22px;">0-1 배낭 문제</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/네트워크/" style="font-size: 10px;">네트워크</a> <a href="/tags/데이터모델링/" style="font-size: 11.11px;">데이터모델링</a> <a href="/tags/데이터베이스/" style="font-size: 16.67px;">데이터베이스</a> <a href="/tags/동적계획법/" style="font-size: 15.56px;">동적계획법</a> <a href="/tags/민상법기초/" style="font-size: 18.89px;">민상법기초</a> <a href="/tags/백트래킹/" style="font-size: 14.44px;">백트래킹</a> <a href="/tags/분기한정법/" style="font-size: 13.33px;">분기한정법</a> <a href="/tags/분할정복법/" style="font-size: 14.44px;">분할정복법</a> <a href="/tags/소프트웨어공학/" style="font-size: 16.67px;">소프트웨어공학</a> <a href="/tags/알고리즘/" style="font-size: 20px;">알고리즘</a> <a href="/tags/외국환/" style="font-size: 14.44px;">외국환</a> <a href="/tags/자료구조/" style="font-size: 11.11px;">자료구조</a> <a href="/tags/최단경로탐색/" style="font-size: 11.11px;">최단경로탐색</a> <a href="/tags/최소신장트리/" style="font-size: 12.22px;">최소신장트리</a> <a href="/tags/탐욕알고리즘/" style="font-size: 15.56px;">탐욕알고리즘</a> <a href="/tags/파이썬/" style="font-size: 14.44px;">파이썬</a> <a href="/tags/회계기초/" style="font-size: 17.78px;">회계기초</a>
+            <a href="/tags/0-1-배낭-문제/" style="font-size: 12.22px;">0-1 배낭 문제</a> <a href="/tags/SQL/" style="font-size: 12.22px;">SQL</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/네트워크/" style="font-size: 10px;">네트워크</a> <a href="/tags/데이터모델링/" style="font-size: 11.11px;">데이터모델링</a> <a href="/tags/데이터베이스/" style="font-size: 16.67px;">데이터베이스</a> <a href="/tags/동적계획법/" style="font-size: 15.56px;">동적계획법</a> <a href="/tags/민상법기초/" style="font-size: 18.89px;">민상법기초</a> <a href="/tags/백트래킹/" style="font-size: 14.44px;">백트래킹</a> <a href="/tags/분기한정법/" style="font-size: 13.33px;">분기한정법</a> <a href="/tags/분할정복법/" style="font-size: 14.44px;">분할정복법</a> <a href="/tags/소프트웨어공학/" style="font-size: 16.67px;">소프트웨어공학</a> <a href="/tags/알고리즘/" style="font-size: 20px;">알고리즘</a> <a href="/tags/외국환/" style="font-size: 14.44px;">외국환</a> <a href="/tags/자료구조/" style="font-size: 11.11px;">자료구조</a> <a href="/tags/최단경로탐색/" style="font-size: 11.11px;">최단경로탐색</a> <a href="/tags/최소신장트리/" style="font-size: 12.22px;">최소신장트리</a> <a href="/tags/탐욕알고리즘/" style="font-size: 15.56px;">탐욕알고리즘</a> <a href="/tags/파이썬/" style="font-size: 15.56px;">파이썬</a> <a href="/tags/회계기초/" style="font-size: 17.78px;">회계기초</a>
         </div>
     </div>
 
